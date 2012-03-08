@@ -1,0 +1,17 @@
+Enter new sample type information: <br />
+<%= form_for @sampletype do |f| -%>
+    type_id: <%= f.text_field :type_id %> <br />
+    type_name: <%= f.text_field :type_name %> <br />
+    type_descr: <%= f.text_field :type_descr %> <br />
+    <%= f.submit %>
+  <% end -%>
+  <hr />
+List of all sampletypes: <br />
+<% if !@sampletypes.blank? %>
+  <% for item in @sampletypes %> 
+    <%= item.type_id %>, <%= item.type_name %>, <%= item.type_descr %> <br />
+  <% end %>
+<% else %>
+
+<% end %>
+

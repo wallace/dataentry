@@ -1,0 +1,2 @@
+module SampletypesHelper
+end
