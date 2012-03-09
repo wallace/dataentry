@@ -1,0 +1,2 @@
+module HabitattypesHelper
+end

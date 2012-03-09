@@ -1,0 +1,15 @@
+Enter new Diver Information: <br />
+<%= form_for @diver do |f| -%>
+  diver_id: <%= f.text_field :diver_id %> <br />
+  diver_name: <%= f.text_field :diver_name %> <br />
+  <%= f.submit %>
+<% end -%>
+<hr />
+List of all Divers:<br />
+<% if !@divers.blank? %>
+  <% for item in @divers %>
+    <%= item.diver_id %>, <%= item.diver_name %>
+  <% end %>
+<% end %>
+
+

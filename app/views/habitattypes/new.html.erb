@@ -1,0 +1,16 @@
+Enter new habitat type information:<br />
+<%= form_for @habitattype do |f| -%>
+    habitat_type_id: <%= f.text_field :habitat_type_id %> <br />
+    habitat_name: <%= f.text_field :habitat_name %> <br />
+    habitat_descr: <%= f.text_field :habitat_descr %> <br />
+    <%= f.submit %>
+  <% end -%>
+  <hr />
+List of all habitat types: <br />
+<% if !@habitattypes.blank? %>
+  <% for item in @habitattypes %> 
+    <%= item.habitat_type_id %>, <%= item.habitat_name %>, <%= item.habitat_descr %> <br />
+  <% end %>
+<% else %>
+
+<% end %>

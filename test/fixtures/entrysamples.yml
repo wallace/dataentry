@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  diver_name: MyString
+  sample_type: MyString
+  date: 2012-03-08 14:04:30
+
+two:
+  diver_name: MyString
+  sample_type: MyString
+  date: 2012-03-08 14:04:30

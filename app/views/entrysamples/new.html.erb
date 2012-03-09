@@ -1,0 +1,12 @@
+Form for sample entry: <br />
+<%= form_for @entrysample do |f| -%>
+  DiverName: <%= f.collection_select(:diver_name_id, Diver.all, :diver_name_id, :diver_name) %> <br />
+  BuddyName: <%= f.collection_select(:buddy_name_id, Diver.all, :diver_name_id, :diver_name) %> <br />
+  SampleType: <%= f.collection_select(:sample_type_id, Sampletype.all, :id, :type_name)%> <br />
+  HabitatType: <%= f.collection_select(:habitat_type_id, Habitattype.all, :habitat_type_id, :habitat_name)%> <br />
+  date: <%= f.text_field :date %> <br />
+  CylinderRadius(m): <%= f.select(:cylinder_radius, [7.5,5]) %> <br />
+  Current: <%= f.select(:current, ["none", "mod.", "high"]) %><br />
+  <%= f.submit %>
+<% end -%>
+

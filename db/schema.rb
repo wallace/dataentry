@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120308175712) do
+ActiveRecord::Schema.define(:version => 20120309175530) do
+
+  create_table "divers", :force => true do |t|
+    t.string   "diver_id"
+    t.string   "diver_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "entrysamples", :force => true do |t|
+    t.integer  "sample_type_id"
+    t.date     "date"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "diver_name_id"
+    t.string   "buddy_name_id"
+    t.integer  "habitat_type_id"
+    t.float    "cylinder_radius"
+    t.string   "current"
+  end
+
+  create_table "habitattypes", :force => true do |t|
+    t.integer  "habitat_type_id"
+    t.string   "habitat_name"
+    t.text     "habitat_descr"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "sampletypes", :force => true do |t|
     t.integer  "type_id"

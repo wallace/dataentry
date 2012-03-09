@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  habitat_type_id: 1
+  habitat_name: MyString
+  habitat_descr: MyText
+
+two:
+  habitat_type_id: 1
+  habitat_name: MyString
+  habitat_descr: MyText
