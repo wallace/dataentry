@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120309175530) do
+ActiveRecord::Schema.define(:version => 20120310023451) do
 
   create_table "divers", :force => true do |t|
-    t.string   "diver_id"
     t.string   "diver_name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "diver_name_id"
   end
 
   create_table "entrysamples", :force => true do |t|
