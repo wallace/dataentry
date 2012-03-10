@@ -7,6 +7,16 @@ Form for sample entry: <br />
   date: <%= f.text_field :date %> <br />
   CylinderRadius(m): <%= f.select(:cylinder_radius, [7.5,5]) %> <br />
   Current: <%= f.select(:current, ["none", "mod.", "high"]) %><br />
+  MaxDepth: <%= f.text_field :max_depth %><br />
+  StationDepth: <%= f.text_field :station_depth %><br />
+  UnderwaterVis: <%= f.text_field :vis %><br />
+  WaterTemp: <%= f.text_field :water_temp %><br />
+  DiveStartTime: H<%= f.text_field :divbegh %> M<%= f.text_field :divbegm %><br />
+  DiveEndTime: H<%= f.text_field :divendh %> M<%= f.text_field :divendm %><br />
+  SampleStartTime: H<%= f.text_field :sampbegh %> M<%= f.text_field :sampbegm %><br />
+  SampleEndTime: H<%= f.text_field :sampendh %> M<%= f.text_field :sampendm %><br />
+  FishingGear: <%= f.text_field :fishgear %><br />
+  Comments: <%= f.text_field :comments %><br />
   <%= f.submit %>
 <% end -%>
 

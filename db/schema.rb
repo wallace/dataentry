@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(:version => 20120310023451) do
     t.integer  "habitat_type_id"
     t.float    "cylinder_radius"
     t.string   "current"
+    t.float    "max_depth"
+    t.float    "station_depth"
+    t.float    "vis"
+    t.float    "water_temp"
+    t.integer  "divbegh"
+    t.integer  "divbegm"
+    t.integer  "divendh"
+    t.integer  "divendm"
+    t.integer  "sampbegh"
+    t.integer  "sampbegm"
+    t.integer  "sampendh"
+    t.integer  "sampendm"
+    t.text     "fishgear"
+    t.text     "comments"
   end
 
   create_table "habitattypes", :force => true do |t|
