@@ -8,7 +8,7 @@ Enter new Diver Information: <br />
 List of all Divers:<br />
 <% if !@divers.blank? %>
   <% for item in @divers %>
-    <%= item.diver_id %>, <%= item.diver_name %>
+    <%= item.diver_name_id %>, <%= item.diver_name %><br />
   <% end %>
 <% end %>
 

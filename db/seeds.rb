@@ -5,3 +5,35 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+puts "Seeding Database with Data"
+
+Sampletype.delete_all
+open("/home/jeremiah/rails_projects/dataentry/db/seed_data/samplelist.noaa") do |samples|
+  samples.read.each_line do |sample|
+    id, name, descr = sample.chomp.split("~")
+    Sampletype.create(:type_id => id, :type_name => name, :type_descr => descr)
+  end
+end
+
+Habitattype.delete_all
+open("/home/jeremiah/rails_projects/dataentry/db/seed_data/habitatlist.noaa") do |habitats|
+  habitats.read.each_line do |habitat|
+    id, name, descr = habitat.chomp.split("~")
+    Habitattype.create(:habitat_type_id => id, :habitat_name => name, :habitat_descr => descr)
+  end
+end
+
+Diver.delete_all
+open("/home/jeremiah/rails_projects/dataentry/db/seed_data/diverlist.noaa") do |divers|
+  divers.read.each_line do |diver|
+    id, name, = diver.chomp.split("~")
+    Diver.create(:diver_name_id => id, :diver_name => name)
+  end
+end
+
+
+    
+    
+
