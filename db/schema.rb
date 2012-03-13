@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120313133403) do
+ActiveRecord::Schema.define(:version => 20120313162911) do
 
   create_table "divers", :force => true do |t|
     t.string   "diver_name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120313133403) do
     t.time     "dive_end_time"
     t.time     "sample_start_time"
     t.time     "sample_end_time"
+    t.string   "field_id"
   end
 
   create_table "habitattypes", :force => true do |t|

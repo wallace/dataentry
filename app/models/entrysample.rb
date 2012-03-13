@@ -7,6 +7,8 @@ class Entrysample < ActiveRecord::Base
   #Validations
   validates :sample_type_id, :presence => true
   validates :date, :presence => true
+  validates :field_id, :presence => true, :uniqueness => true
+  validates_format_of :field_id, :with => /\d\d\d\d[A-Z]/
 
   before_save :create_msn
 

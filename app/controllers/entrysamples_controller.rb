@@ -8,6 +8,8 @@ class EntrysamplesController < ApplicationController
     @entrysample = Entrysample.new(params[:entrysample])
     if @entrysample.save
       redirect_to new_entrysample_path
+    else
+      render :action => "new"
     end
   end
 end
