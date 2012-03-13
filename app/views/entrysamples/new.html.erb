@@ -4,19 +4,21 @@ Form for sample entry: <br />
   BuddyName: <%= f.collection_select(:buddy_name_id, Diver.all, :diver_name_id, :diver_name, {:include_blank => ""}) %> <br />
   SampleType: <%= f.collection_select(:sample_type_id, Sampletype.all, :id, :type_name, {:include_blank => ""})%> <br />
   HabitatType: <%= f.collection_select(:habitat_type_id, Habitattype.all, :habitat_type_id, :habitat_name, {:include_blank => ""})%> <br />
-  date: <%= f.text_field :date %> <br />
+  date: <%= f.date_select :date, {:include_blank => "", :use_month_numbers => true, :order => [:month, :day, :year]} %> <br />
   CylinderRadius(m): <%= f.select(:cylinder_radius, [7.5,5], {:include_blank => ""}) %> <br />
   Current: <%= f.select(:current, ["none", "mod.", "high"], {:include_blank => ""}) %><br />
   MaxDepth: <%= f.text_field :max_depth %><br />
   StationDepth: <%= f.text_field :station_depth %><br />
   UnderwaterVis: <%= f.text_field :vis %><br />
   WaterTemp: <%= f.text_field :water_temp %><br />
-  DiveStartTime: H<%= f.text_field :divbegh %> M<%= f.text_field :divbegm %><br />
-  DiveEndTime: H<%= f.text_field :divendh %> M<%= f.text_field :divendm %><br />
-  SampleStartTime: H<%= f.text_field :sampbegh %> M<%= f.text_field :sampbegm %><br />
-  SampleEndTime: H<%= f.text_field :sampendh %> M<%= f.text_field :sampendm %><br />
+  DiveStartTime: <%= f.time_select :dive_start_time, {:include_blank => "", :ampm => true} %><br />
+  DiveEndTime: <%= f.time_select :dive_end_time, {:include_blank => "", :ampm => true} %><br />
+  SamppleStartTime: <%= f.time_select :sample_start_time, {:include_blank => "", :ampm => true} %><br />
+  SampleEndTime: <%= f.time_select :sample_end_time, {:include_blank => "", :ampm => true} %><br />
   FishingGear: <%= f.text_field :fishgear %><br />
   Comments: <%= f.text_area :comments, :size => "60x12" %><br />
   <%= f.submit %>
 <% end -%>
 
+<hr />
+  Quick Links: <%= link_to "Divers", new_diver_path %>, <%= link_to "Habitat Types", new_habitattype_path %>, <%= link_to "Sample Types", new_sampletype_path %>, <%= link_to "Entry Sample", new_entrysample_path %>

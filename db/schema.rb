@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312154552) do
+ActiveRecord::Schema.define(:version => 20120313133403) do
 
   create_table "divers", :force => true do |t|
     t.string   "diver_name"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 20120312154552) do
   create_table "entrysamples", :force => true do |t|
     t.integer  "sample_type_id"
     t.date     "date"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "diver_name_id"
     t.string   "buddy_name_id"
     t.integer  "habitat_type_id"
@@ -34,17 +34,13 @@ ActiveRecord::Schema.define(:version => 20120312154552) do
     t.float    "station_depth"
     t.float    "vis"
     t.float    "water_temp"
-    t.integer  "divbegh"
-    t.integer  "divbegm"
-    t.integer  "divendh"
-    t.integer  "divendm"
-    t.integer  "sampbegh"
-    t.integer  "sampbegm"
-    t.integer  "sampendh"
-    t.integer  "sampendm"
     t.text     "fishgear"
     t.text     "comments"
     t.string   "mastersampcd"
+    t.time     "dive_start_time"
+    t.time     "dive_end_time"
+    t.time     "sample_start_time"
+    t.time     "sample_end_time"
   end
 
   create_table "habitattypes", :force => true do |t|

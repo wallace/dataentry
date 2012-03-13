@@ -13,7 +13,7 @@ class Entrysample < ActiveRecord::Base
   protected
 
   def create_msn
-    self.mastersampcd = date.to_s(:number) + sampbegh.to_s + sampbegm.to_s + diver_name_id
+    self.mastersampcd = date.to_s(:number) + sample_start_time.to_formatted_s(:time).gsub(":", "") + diver_name_id
   end
 end
 
