@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310023451) do
+ActiveRecord::Schema.define(:version => 20120312154552) do
 
   create_table "divers", :force => true do |t|
     t.string   "diver_name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20120310023451) do
     t.integer  "sampendm"
     t.text     "fishgear"
     t.text     "comments"
+    t.string   "mastersampcd"
   end
 
   create_table "habitattypes", :force => true do |t|

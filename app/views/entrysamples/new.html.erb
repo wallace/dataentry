@@ -1,12 +1,12 @@
 Form for sample entry: <br />
 <%= form_for @entrysample do |f| -%>
-  DiverName: <%= f.collection_select(:diver_name_id, Diver.all, :diver_name_id, :diver_name) %> <br />
-  BuddyName: <%= f.collection_select(:buddy_name_id, Diver.all, :diver_name_id, :diver_name) %> <br />
-  SampleType: <%= f.collection_select(:sample_type_id, Sampletype.all, :id, :type_name)%> <br />
-  HabitatType: <%= f.collection_select(:habitat_type_id, Habitattype.all, :habitat_type_id, :habitat_name)%> <br />
+  DiverName: <%= f.collection_select(:diver_name_id, Diver.all, :diver_name_id, :diver_name, {:include_blank => ""}) %> <br />
+  BuddyName: <%= f.collection_select(:buddy_name_id, Diver.all, :diver_name_id, :diver_name, {:include_blank => ""}) %> <br />
+  SampleType: <%= f.collection_select(:sample_type_id, Sampletype.all, :id, :type_name, {:include_blank => ""})%> <br />
+  HabitatType: <%= f.collection_select(:habitat_type_id, Habitattype.all, :habitat_type_id, :habitat_name, {:include_blank => ""})%> <br />
   date: <%= f.text_field :date %> <br />
-  CylinderRadius(m): <%= f.select(:cylinder_radius, [7.5,5]) %> <br />
-  Current: <%= f.select(:current, ["none", "mod.", "high"]) %><br />
+  CylinderRadius(m): <%= f.select(:cylinder_radius, [7.5,5], {:include_blank => ""}) %> <br />
+  Current: <%= f.select(:current, ["none", "mod.", "high"], {:include_blank => ""}) %><br />
   MaxDepth: <%= f.text_field :max_depth %><br />
   StationDepth: <%= f.text_field :station_depth %><br />
   UnderwaterVis: <%= f.text_field :vis %><br />
@@ -16,7 +16,7 @@ Form for sample entry: <br />
   SampleStartTime: H<%= f.text_field :sampbegh %> M<%= f.text_field :sampbegm %><br />
   SampleEndTime: H<%= f.text_field :sampendh %> M<%= f.text_field :sampendm %><br />
   FishingGear: <%= f.text_field :fishgear %><br />
-  Comments: <%= f.text_field :comments %><br />
+  Comments: <%= f.text_area :comments, :size => "60x12" %><br />
   <%= f.submit %>
 <% end -%>
 
