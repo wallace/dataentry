@@ -31,7 +31,7 @@ class ChangeTimeFields < ActiveRecord::Migration
     add_column :entrysamples, :sampbegh
     add_column :entrysamples, :divendm
     add_column :entrysamples, :divendh
-    add_column :entrysamples, :divebegm
-    add_column :entrysamples, :divebegh
+    add_column :entrysamples, :divbegm
+    add_column :entrysamples, :divbegh
   end
 end

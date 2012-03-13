@@ -1,4 +1,6 @@
 Dataentry::Application.routes.draw do
+  #get "welcome/home"
+  root :to => "welcome#home"
   resources :sampletypes
   resources :entrysamples
   resources :divers
