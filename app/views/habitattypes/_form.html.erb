@@ -1,0 +1,20 @@
+Enter new habitat type information:<br />
+<%= form_for @habitattype do |f| -%>
+  <%= render 'shared/errormessages', :object => f.object %>
+    habitat_type_id: <%= f.text_field :habitat_type_id %> <br />
+    habitat_name: <%= f.text_field :habitat_name %> <br />
+    habitat_descr: <%= f.text_field :habitat_descr %> <br />
+    <%= f.submit %>
+  <% end -%>
+  <hr />
+List of all habitat types: (click on name to edit) <br />
+<% if !@habitattypes.blank? %>
+  <% for item in @habitattypes %> 
+    <%= item.habitat_type_id %>, <%= link_to item.habitat_name, edit_habitattype_path(item)%>, <%= item.habitat_descr %> <br />
+  <% end %>
+<% else %>
+
+<% end %>
+
+<hr />
+  Quick Links: <%= link_to "Divers", new_diver_path %>, <%= link_to "Habitat Types", new_habitattype_path %>, <%= link_to "Sample Types", new_sampletype_path %>, <%= link_to "Entry Sample", new_entrysample_path %>

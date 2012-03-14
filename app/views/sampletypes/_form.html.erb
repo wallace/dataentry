@@ -1,0 +1,19 @@
+Enter new sample type information: <br />
+<%= form_for @sampletype do |f| -%>
+    type_id: <%= f.text_field :type_id %> <br />
+    type_name: <%= f.text_field :type_name %> <br />
+    type_descr: <%= f.text_area :type_descr, :size => "30x3" %> <br />
+    <%= f.submit %>
+  <% end -%>
+  <hr />
+List of all sample types: (click on name to edit) <br />
+<% if !@sampletypes.blank? %>
+  <% for item in @sampletypes %> 
+    <%= item.type_id %> <%= link_to item.type_name, edit_sampletype_path(item) %>, <%= item.type_descr %> <br />
+  <% end %>
+<% else %>
+
+<% end %>
+
+<hr />
+  Quick Links: <%= link_to "Divers", new_diver_path %>, <%= link_to "Habitat Types", new_habitattype_path %>, <%= link_to "Sample Types", new_sampletype_path %>, <%= link_to "Entry Sample", new_entrysample_path %>

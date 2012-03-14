@@ -1,17 +1,3 @@
-Enter new Diver Information: <br />
-<%= form_for @diver do |f| -%>
-  diver_id: <%= f.text_field :diver_name_id %> <br />
-  diver_name: <%= f.text_field :diver_name %> <br />
-  <%= f.submit %>
-<% end -%>
-<hr />
-List of all Divers:<br />
-<% if !@divers.blank? %>
-  <% for item in @divers %>
-    <%= item.diver_name_id %>, <%= item.diver_name %><br />
-  <% end %>
-<% end %>
+<h1> Create new Diver </h1>
 
-<hr />
-  Quick Links: <%= link_to "Divers", new_diver_path %>, <%= link_to "Habitat Types", new_habitattype_path %>, <%= link_to "Sample Types", new_sampletype_path %>, <%= link_to "Entry Sample", new_entrysample_path %>
-
+  <%= render 'form' %>
