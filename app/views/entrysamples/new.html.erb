@@ -22,6 +22,5 @@ Form for sample entry: <br />
   Comments: <%= f.text_area :comments, :size => "60x12" %><br />
   <%= f.submit %>
 <% end -%>
+ <%= render 'shared/quick_links' %>
 
-<hr />
-  Quick Links: <%= link_to "Divers", new_diver_path %>, <%= link_to "Habitat Types", new_habitattype_path %>, <%= link_to "Sample Types", new_sampletype_path %>, <%= link_to "Entry Sample", new_entrysample_path %>

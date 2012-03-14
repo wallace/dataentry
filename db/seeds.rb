@@ -33,6 +33,15 @@ open("/home/jeremiah/rails_projects/dataentry/db/seed_data/diverlist.noaa") do |
   end
 end
 
+Animals.delete_all
+open("/home/jeremiah/rails_projects/dataentry/db/seed_data/specieslist.noaa") do |animals|
+  animals.read.each_line do |animal|
+    code, name, max = diver.chomp.split("~")
+    Diver.create(:spp_code => code, :common_name => name, :max_size => max)
+  end
+end
+
+
 
     
     
